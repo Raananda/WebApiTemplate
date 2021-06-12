@@ -1,3 +1,4 @@
+using Contracts.Interfaces;
 using DI;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -8,6 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using OracleInfraDAL;
 using Serilog;
 using System;
 using System.Collections.Generic;
@@ -33,11 +35,12 @@ namespace WebApiTemplate
             var path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, Configuration.GetValue<string>("DLLPath"));
             var resolver = new Resolver(path, services);
 
+            services.AddTransient<IInfraDAL, InfraDAL>();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "WebApiTemplate", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "ServerTemplate", Version = "v1" });
             });
         }
 

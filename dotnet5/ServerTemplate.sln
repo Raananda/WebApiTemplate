@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30717.126
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApiTemplate", "WebApiTemplate\WebApiTemplate.csproj", "{842C0A10-C534-46D5-84F5-83E2323AE6A4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApi", "WebApi\WebApi.csproj", "{842C0A10-C534-46D5-84F5-83E2323AE6A4}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AppContracts", "AppContracts", "{8CC6A2EA-0A95-4719-BAC4-F47BB413837F}"
 EndProject
@@ -15,7 +15,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataAccessLayer", "DataAcce
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppDAL", "AppDAL\AppDAL.csproj", "{950C49B2-918D-4A19-833A-D8C0A550D0E1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeBLL", "EmployeeBLL\EmployeeBLL.csproj", "{091FAA9E-4DB7-4F72-99FD-450539115E1C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppBLL", "EmployeeBLL\AppBLL.csproj", "{091FAA9E-4DB7-4F72-99FD-450539115E1C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ExternalControllers", "ExternalControllers", "{1B80DA56-22DB-4261-9E72-A8C939E12C40}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppExternalController", "EmployeeExternalController\AppExternalController.csproj", "{342A2DF0-B9E7-436D-98B1-8637FF6CAE33}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +43,10 @@ Global
 		{091FAA9E-4DB7-4F72-99FD-450539115E1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{091FAA9E-4DB7-4F72-99FD-450539115E1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{091FAA9E-4DB7-4F72-99FD-450539115E1C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{342A2DF0-B9E7-436D-98B1-8637FF6CAE33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{342A2DF0-B9E7-436D-98B1-8637FF6CAE33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{342A2DF0-B9E7-436D-98B1-8637FF6CAE33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{342A2DF0-B9E7-436D-98B1-8637FF6CAE33}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -47,6 +55,7 @@ Global
 		{95E4F2B5-5F87-4DEB-9D8F-98511246BFE6} = {8CC6A2EA-0A95-4719-BAC4-F47BB413837F}
 		{950C49B2-918D-4A19-833A-D8C0A550D0E1} = {5977D7E8-61D3-4DA8-A9CB-6265C5418D68}
 		{091FAA9E-4DB7-4F72-99FD-450539115E1C} = {7905D20E-524F-40BD-98B8-D4A0EB7FF6B8}
+		{342A2DF0-B9E7-436D-98B1-8637FF6CAE33} = {1B80DA56-22DB-4261-9E72-A8C939E12C40}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E727BA7C-02BA-4A4E-8198-79FFA60617BC}

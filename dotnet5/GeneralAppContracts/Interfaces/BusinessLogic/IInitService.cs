@@ -7,6 +7,6 @@ namespace GeneralAppContracts.Interfaces.BusinessLogic
 {
     public interface IInitService
     {
-          AppInitDTO GetInitData();
+        AppInitResponseDTO GetInitData();
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GeneralAppContracts.DataTransferObjects
 {
-    public class AppInitDTO
+    public class AppInitResponseDTO
     {
         public string Data1 { get; set; }
         public int Data2 { get; set; }

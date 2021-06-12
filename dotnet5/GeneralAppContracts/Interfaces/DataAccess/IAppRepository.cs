@@ -7,6 +7,6 @@ namespace GeneralAppContracts.Interfaces.DataAccess
 {
    public interface IAppRepository
     {
-        AppInitDTO Init();
+        AppInitResponseDTO Init();
     }
 }
