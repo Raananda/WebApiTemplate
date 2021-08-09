@@ -31,18 +31,18 @@ namespace AppDAL
 
             };
 
-            //var connection = _infraDAL.GetConnection(_connectionString);
+            var connection = _infraDAL.GetConnection(_connectionString);
 
             //// Array example
-            //var p_userID = _infraDAL.GetParameter("UserID", 12);
-            //var p_userID2 = _infraDAL.GetParameter("UserID2", 13);
-            //var Response1 = _infraDAL.Exec(connection, "PACKAGE_NAME", "STORED_PROCEDURE_NAME", p_userID, p_userID2);
+            var p_userID = _infraDAL.GetParameter("UserID", 12);
+            var p_userID2 = _infraDAL.GetParameter("UserID2", 13);
+            var Response1 = _infraDAL.Exec(connection, "", "film_in_stock", p_userID, p_userID2);
 
-            //// List example
+            // List example
             //var parameterList = _infraDAL.GetParametersList();
             //parameterList.Add("l_first_name", "raanan");
             //parameterList.Add("l_Id", 123456);
-            //var Response2 = _infraDAL.Exec(connection, "PACKAGE_NAME", "STORED_PROCEDURE_NAME", parameterList);
+            //var Response2 = _infraDAL.Exec(connection, "", "ffilm_in_stock", parameterList);
 
 
             // Mapping with automapper
