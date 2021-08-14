@@ -37,7 +37,7 @@ namespace AppDAL
             //// Array example
             var p_userID = _infraDAL.GetParameter("UserID", 12);
             var p_userID2 = _infraDAL.GetParameter("UserID2", 13);
-            var Response1 = await Task.Run(() => _infraDAL.Exec(connection, "", "film_in_stock", p_userID, p_userID2));
+         //   var Response1 = await Task.Run(() => _infraDAL.Exec(connection, "", "film_in_stock", p_userID, p_userID2));
 
             // List example
             //var parameterList = _infraDAL.GetParametersList();

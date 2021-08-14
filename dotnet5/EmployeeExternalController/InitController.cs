@@ -22,8 +22,9 @@ namespace AppExternalController
 
         [HttpGet]
         [Route("GetInit")]
-        public async Task<AppInitResponseDTO> GetInit()
+        public async  Task<ActionResult<AppInitResponseDTO>> GetInit()
         {
+           // return BadRequest();
             return await _initService.GetInitDataAsync();          
         }
 
