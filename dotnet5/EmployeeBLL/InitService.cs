@@ -3,6 +3,7 @@ using GeneralAppContracts.DataTransferObjects;
 using GeneralAppContracts.Interfaces.BusinessLogic;
 using GeneralAppContracts.Interfaces.DataAccess;
 using System;
+using System.Threading.Tasks;
 
 namespace AppBLL
 {
@@ -16,9 +17,9 @@ namespace AppBLL
             _appDBContext = appDBContext;
         }
 
-        public AppInitResponseDTO GetInitData()
+        public async Task<AppInitResponseDTO> GetInitDataAsync()
         {        
-            return _appDBContext.GetInitData();
+            return await _appDBContext.GetInitDataAsync();
         }
     }
 }

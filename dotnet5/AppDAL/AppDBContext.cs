@@ -5,11 +5,12 @@ using GeneralAppContracts.Interfaces.DataAccess;
 using Microsoft.Extensions.Configuration;
 using System;
 using System.Data;
+using System.Threading.Tasks;
 
 namespace AppDAL
 {
     [Register(Policy.Transient, typeof(IAppDBContext))]
-    public class AppDBContext: IAppDBContext
+    public class AppDBContext : IAppDBContext
     {
         private readonly IConfiguration _configuration;
         private readonly IInfraDAL _infraDAL;
@@ -22,7 +23,7 @@ namespace AppDAL
             _connectionString = _configuration.GetConnectionString("Default");
         }
 
-        public AppInitResponseDTO GetInitData()
+        public async Task<AppInitResponseDTO> GetInitDataAsync()
         {
             var Response = new AppInitResponseDTO
             {
@@ -36,7 +37,7 @@ namespace AppDAL
             //// Array example
             var p_userID = _infraDAL.GetParameter("UserID", 12);
             var p_userID2 = _infraDAL.GetParameter("UserID2", 13);
-            var Response1 = _infraDAL.Exec(connection, "", "film_in_stock", p_userID, p_userID2);
+            var Response1 = await Task.Run(() => _infraDAL.Exec(connection, "", "film_in_stock", p_userID, p_userID2));
 
             // List example
             //var parameterList = _infraDAL.GetParametersList();
@@ -50,6 +51,6 @@ namespace AppDAL
             return Response;
         }
 
-      
+
     }
 }

@@ -21,4 +21,14 @@
     <ProjectReference Include="..\GeneralAppContracts\GeneralAppContracts.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="TefenContracts">
+      <HintPath>..\ExternalAppInfras\TefenContracts.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Controllers\" />
+  </ItemGroup>
+
 </Project>

@@ -2,11 +2,12 @@
 using GeneralAppContracts.Interfaces.BusinessLogic;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using System.Threading.Tasks;
 
 namespace AppExternalController
 {
     [ApiController]
-    [Route("api/[controller]/{Action}")]
+    [Route("api/[controller]")]
     public class InitController : ControllerBase
     {
 
@@ -20,9 +21,10 @@ namespace AppExternalController
         }
 
         [HttpGet]
-        public AppInitResponseDTO GetInit()
+        [Route("GetInit")]
+        public async Task<AppInitResponseDTO> GetInit()
         {
-            return _initService.GetInitData();           
+            return await _initService.GetInitDataAsync();          
         }
 
     }
