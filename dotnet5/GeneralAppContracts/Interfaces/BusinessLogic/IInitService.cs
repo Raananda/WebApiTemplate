@@ -8,6 +8,6 @@ namespace GeneralAppContracts.Interfaces.BusinessLogic
 {
     public interface IInitService
     {
-        Task<AppInitResponseDTO> GetInitDataAsync();
+        Task<List<AppInitResponseDTO>> GetInitDataAsync();
     }
 }

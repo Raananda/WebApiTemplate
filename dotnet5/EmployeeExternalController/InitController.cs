@@ -2,6 +2,7 @@
 using GeneralAppContracts.Interfaces.BusinessLogic;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace AppExternalController
@@ -22,7 +23,7 @@ namespace AppExternalController
 
         [HttpGet]
         [Route("GetInit")]
-        public async  Task<ActionResult<AppInitResponseDTO>> GetInit()
+        public async  Task<ActionResult<List<AppInitResponseDTO>>> GetInit()
         {
            // return BadRequest();
             return await _initService.GetInitDataAsync();          

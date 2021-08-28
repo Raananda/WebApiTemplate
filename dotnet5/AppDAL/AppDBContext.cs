@@ -1,10 +1,14 @@
 ﻿using Contracts;
 using Contracts.Interfaces;
+using Dapper;
 using GeneralAppContracts.DataTransferObjects;
 using GeneralAppContracts.Interfaces.DataAccess;
 using Microsoft.Extensions.Configuration;
+using MySql.Data.MySqlClient;
 using System;
+using System.Collections.Generic;
 using System.Data;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace AppDAL
@@ -23,21 +27,16 @@ namespace AppDAL
             _connectionString = _configuration.GetConnectionString("Default");
         }
 
-        public async Task<AppInitResponseDTO> GetInitDataAsync()
+        public async Task<List<AppInitResponseDTO>> GetInitDataAsync()
         {
             var Response = new AppInitResponseDTO
             {
                 Data1 = "This is data 1",
-                Data2 = 999
+                Data2 = 999,
+                Data3 = 234324
 
             };
 
-            var connection = _infraDAL.GetConnection(_connectionString);
-
-            //// Array example
-            var p_userID = _infraDAL.GetParameter("UserID", 12);
-            var p_userID2 = _infraDAL.GetParameter("UserID2", 13);
-         //   var Response1 = await Task.Run(() => _infraDAL.Exec(connection, "", "film_in_stock", p_userID, p_userID2));
 
             // List example
             //var parameterList = _infraDAL.GetParametersList();
@@ -48,7 +47,42 @@ namespace AppDAL
 
             // Mapping with automapper
 
-            return Response;
+
+            #region DAL INFRA
+            //  DAL INFRA
+            // var connection = _infraDAL.GetConnection(_connectionString);
+            // Execute SQL query
+            // var Response2 = await Task.Run(() => _infraDAL.ExecSQL(connection, "select t.* from db_template.init t"));
+
+            // Execute SP
+            // var Response2 = await Task.Run(() => _infraDAL.ExecSP(connection, "db_template.get_init_data", _infraDAL.GetParametersList()));
+            #endregion
+
+            #region DAPPER SQL
+            // DAPPER SQL
+            // string sql = "select t.* from db_template.init t";
+            // using (var connection = new MySqlConnection(_connectionString))
+            //{
+            //    var Response2 = await connection.QueryAsync<AppInitResponseDTO>(sql).ConfigureAwait(false);           
+
+            //    return Response2.ToList();
+            //}
+            #endregion
+
+            #region DAPPER SP
+            //DAPPER SP
+            string sql = "db_template.get_init_data";
+
+            using (var connection = new MySqlConnection(_connectionString))
+            {
+                var Params = new
+                {
+                    l_data3 = 111
+                };
+                var Response2 = await connection.QueryAsync<AppInitResponseDTO>(sql, Params, commandType: CommandType.StoredProcedure).ConfigureAwait(false);
+                return Response2.ToList();
+            }
+            #endregion
         }
 
 

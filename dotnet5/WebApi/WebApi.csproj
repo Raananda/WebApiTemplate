@@ -2,11 +2,12 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+    <UserSecretsId>137390e9-ebcb-4c3e-b64b-b94407e8b4a5</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="DI" Version="1.0.7" />
-    <PackageReference Include="MySqlInfraDAL" Version="1.0.0" />
+    <PackageReference Include="MySqlInfraDAL" Version="1.1.0" />
     <PackageReference Include="Serilog.AspNetCore" Version="4.1.0" />
     <PackageReference Include="Serilog.Enrichers.Environment" Version="2.1.3" />
     <PackageReference Include="Serilog.Enrichers.Process" Version="2.0.1" />
